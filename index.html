@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Online Voting System</h1>
+    </header>
+
+    <main>
+        <!-- Voting Section -->
+        <section id="voting-section">
+            <h2>Vote for Your Candidate</h2>
+            <form id="voteForm">
+                <label for="candidates">Select Candidate:</label>
+                <select id="candidates" name="candidate">
+                    <!-- Candidates will be dynamically loaded here -->
+                </select>
+                <button type="submit">Vote</button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section">
+            <h2>Live Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                    <!-- Results will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Admin Panel to Add Candidates -->
+        <section id="admin-section">
+            <h2>Admin Panel</h2>
+            <form id="addCandidateForm">
+                <input type="text" id="newCandidate" placeholder="Enter candidate name" required>
+                <button type="submit">Add Candidate</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- Link to JavaScript -->
+</body>
+</html>
